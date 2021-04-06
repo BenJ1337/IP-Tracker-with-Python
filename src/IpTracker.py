@@ -8,7 +8,7 @@ from GoogleMailer import GoogleMailer
 class IpTracker:
     oldIp = ''
     userAgents = []
-    sleepMultiplier = 1
+    sleepMultiplier = 60
     url = ''
 
     def __init__(self):
