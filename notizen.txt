@@ -22,3 +22,4 @@ Links:
 - https://docs.python.org/3/tutorial/venv.html
 - https://strftime.org/
 - https://janakiev.com/blog/python-background/
+- https://github.com/monperrus/crawler-user-agents

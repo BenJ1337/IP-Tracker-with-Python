@@ -7,14 +7,14 @@ from GoogleMailer import GoogleMailer
 
 class IpTracker:
     oldIp = ''
-    header = {}
-    sleepMultiplier = 60
+    userAgents = []
+    sleepMultiplier = 1
     url = ''
 
     def __init__(self):
         logger = logging.getLogger("iplogger")
-        with open("../headers/header1.json") as header_file:
-            self.header = json.load(header_file)
+        with open("../headers/crawler-user-agents.json") as header_file:
+            self.userAgents = json.load(header_file)
         
         with open("../config/url.config") as url_file:
             urlConfig = json.load(url_file)
@@ -25,7 +25,10 @@ class IpTracker:
         logger = logging.getLogger("iplogger")
         try:
             while True:
-                resp = requests.get(self.url, self.header)
+                userAgentAgency = random.choice(self.userAgents)
+                userAgent = random.choice(userAgentAgency['instances'])
+                logger.debug(userAgent)
+                resp = requests.get(self.url, userAgent)
                 currTiemstamp = datetime.now()
                 status = resp.status_code
                 if status == 200:
