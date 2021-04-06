@@ -1,0 +1,24 @@
+### Virtuelle Umgebung anlegen
+python -m venv .\
+
+### Virtuelle Umgebung aktivieren
+#### Windows
+.\Scripts\activate.bat
+
+#### Linux
+./bin/activate
+
+### Install dependencies
+- pip install requests
+- pip install pyyaml
+
+### Listed installed modules
+- pip freeze 
+
+### Install dependencies from file
+- pip install -r your_list
+
+Links:
+- https://docs.python.org/3/tutorial/venv.html
+- https://strftime.org/
+- https://janakiev.com/blog/python-background/
